@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Class Person, the parent class
 class Person
   attr_accessor :name, :age
