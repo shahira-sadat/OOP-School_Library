@@ -1,5 +1,7 @@
-require_relative 'person'
+# frozen_string_literal: true
 
+require_relative 'person'
+# Class Teacher inherites person
 class Teacher < Person
   attr_accessor :specialization
 
@@ -16,3 +18,16 @@ class Teacher < Person
     true
   end
 end
+
+puts 'Enter Teacher Name'
+new_name = gets.chomp
+puts 'Enter Teacher Specialization'
+new_specialization = gets.chomp
+puts 'Enter Teacher Age'
+new_age = gets.chomp.to_i
+
+teach = Teacher.new(new_age, new_specialization, new_name)
+puts("Teacher Id: #{teach.id}")
+puts("Teacher Name: #{teach.name}")
+puts("Teacher Specialization: #{teach.specialization}")
+puts("Teacher Age: #{teach.age}")
