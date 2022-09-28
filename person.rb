@@ -1,13 +1,21 @@
+require_relative 'nameable'
+require_relative 'decorator'
+
 # Class Person, the parent class
-class Person
+class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id
 
   def initialize(age, name = 'unknown', parent_permission: true)
+    super()
     @id = Random.rand(1...1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
+  end
+
+  def correct_name
+    @name
   end
 
   def can_use_services?
