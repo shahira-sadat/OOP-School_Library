@@ -6,16 +6,16 @@ class Person < Nameable
   attr_accessor :name, :rentals
   attr_reader :id
 
-  def initialize(age, name = 'unknown', parent_permission: true)
+  def initialize(age, name, parent_permission)
     super()
-    @id = Random.rand(1...1000)
+    @id = (Random.rand(1...1000) * Random.rand(1...1000)) / 100
     @name = name
     @age = age
     @parent_permission = parent_permission
     @rentals = []
   end
 
-  def add_rental(_rental)
+  def add_rental(book)
     Rental.new(book, self)
   end
 
@@ -33,10 +33,3 @@ class Person < Nameable
     @age >= 18
   end
 end
-
-person = Person.new(22, 'maximilianus')
-puts person.correct_name
-trimmed_person = TrimmerDecorator.new(person)
-puts trimmed_person.correct_name
-capitalized_trimmed_person = CapitalizeDecorator.new(trimmed_person)
-puts capitalized_trimmed_person.correct_name
