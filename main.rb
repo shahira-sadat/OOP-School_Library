@@ -30,7 +30,7 @@ def extra_options(num)
   when 8
     list_all_teachers
   when 9
-    print "Thanks"
+    print "Thanks\n"
     exit
   when 0
     print "\nPlease Enter a valid option\n".upcase
