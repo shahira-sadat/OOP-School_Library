@@ -6,7 +6,6 @@ class Student < Person
   def initialize(classroom = '', *args)
     super(*args)
     @classroom = classroom
-    update_classroom(@classroom)
   end
 
   def play_hooky
