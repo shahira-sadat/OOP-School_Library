@@ -1,10 +1,8 @@
-require_relative 'person'
-# Class Teacher inherites person
-class Teacher < Person
-  attr_accessor :specialization
+require './person'
 
-  def initialize(age, specialization, name = 'Unknown', parent_permission: true)
-    super(age, name, parent_permission)
+class Teacher < Person
+  def initialize(*args, specialization)
+    super(*args)
     @specialization = specialization
   end
 
